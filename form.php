@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($errors)) {
         // traitement du formulaire
         // puis redirection
-        header('Location: success.php');
+        header('Location: form.php');
     }
 }
 
