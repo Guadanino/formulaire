@@ -18,6 +18,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors[] = "Le nom est obligatoire";
     if (!isset($_POST['user_email']) || trim($_POST['user_email']) === '')
         $errors[] = "L'email est obligatoire";
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errors[] = 'l\'adresse email n\'est pas au bon format';
+    }
     if (!isset($_POST['mobile']) || trim($_POST['mobile']) === '')
         $errors[] = "Le numéro de téléphone est obligatoire";
     if (!isset($_POST['objet']) || trim($_POST['objet']) === '')
